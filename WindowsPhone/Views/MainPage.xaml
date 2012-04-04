@@ -1,0 +1,57 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="IE.Debug.WindowsPhone.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    xmlns:local="clr-namespace:IE.Debug.WindowsPhone.Controls">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="Windows Phone IE debugger" Name="pivotControl" SelectionChanged="Pivot_SelectionChanged">
+            
+            <controls:PivotItem Header="main" Tag="pvtMain">
+                <local:PageHostControl x:Name="pvtMain"></local:PageHostControl>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="console" Tag="pvtConsole">
+                <local:TraceConsoleControl x:Name="pvtConsole"></local:TraceConsoleControl>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="source" Tag="pvtSource">
+                <local:ViewSourceControl x:Name="pvtSource"></local:ViewSourceControl>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>      
+
+    <phone:PhoneApplicationPage.Resources>
+
+        <shell:ApplicationBar x:Key="pvtMainApplicationBar" IsMenuEnabled="True" Opacity="0.5" IsVisible="True">
+            <shell:ApplicationBarIconButton  Click="ActionInstallDebugConsole" IconUri="/Images/appbar.debug.rest.png" Text="Debug"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem  Click="ActionRunFirebug"  Text="Run firebug"/>
+                <!--<shell:ApplicationBarMenuItem  Click="ActionRunTestScript" Text="Run test script"/>-->
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="pvtConsoleApplicationBar" IsMenuEnabled="True" Opacity="0.5" IsVisible="False">
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="pvtSourceApplicationBar" IsMenuEnabled="True" Opacity="0.5" IsVisible="True">
+            <shell:ApplicationBarIconButton Click="ActionZoomIn"  IconUri="/Images/appbar.plus.rest.png" Text="Zoom In"/>
+            <shell:ApplicationBarIconButton Click="ActionZoomOut" IconUri="/Images/appbar.minus.rest.png" Text="Zoom Out"/>
+            <shell:ApplicationBarIconButton Click="ActionEmailSourceCode" IconUri="/Images/appbar.feature.email.rest.png" Text="Email"/>
+        </shell:ApplicationBar>
+
+    </phone:PhoneApplicationPage.Resources>
+
+</phone:PhoneApplicationPage>

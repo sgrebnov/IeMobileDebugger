@@ -1,0 +1,1 @@
+console.log('test.js has been installed');
