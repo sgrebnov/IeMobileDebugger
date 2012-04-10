@@ -17,7 +17,7 @@
         <TemplateType5>
           <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>IeMobileDebugger</Title>
+          <Title>Html Debugger</Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>
