@@ -1,5 +1,7 @@
 # Welcome #
 
+IeMobileDebugger is a simple IE debug tool for Windows Phone.
+
 ### Background ###
 
 Working very close with the numerous mobile web frameworks I see how often people (mostly developers) complain about the lack of the tool to debug html produced by a Windows Phone Browser. This also means that there is no way to share the page structure to get help or to just debug the page in more comfortable environment.
