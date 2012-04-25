@@ -1,3 +1,5 @@
 /Bin/
 /obj/
 /*.csproj.user
+/PerformanceLogs/
+/*.sap
