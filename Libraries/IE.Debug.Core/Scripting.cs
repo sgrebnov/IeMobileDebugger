@@ -24,6 +24,13 @@ namespace IE.Debug.Core
                 link);
         }
 
+		public static string BuilInjectInlineScript(string text)
+		{
+			return String.Format(
+				@"var head = document.getElementsByTagName('head')[0]; var sc1 = document.createElement('script');sc1.innerHTML = '{0}';sc1.type = 'text/javascript'; (head || document.body).appendChild(sc1);",
+				text);
+		}
+
         public static string PhoneGapInjectScript 
         {
             get {return BuilInjectScript(PhoneGapLink); }

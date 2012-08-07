@@ -15,12 +15,16 @@
     shell:SystemTray.IsVisible="True"
     xmlns:local="clr-namespace:IE.Debug.WindowsPhone.Controls">
     
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,0" Height="Auto" Background="Transparent" VerticalAlignment="Top">
         <!--Pivot Control-->
         <controls:Pivot Title="Windows Phone IE debugger" Name="pivotControl" SelectionChanged="Pivot_SelectionChanged">
-            
-            <controls:PivotItem Header="main" Tag="pvtMain">
-                <local:PageHostControl x:Name="pvtMain"></local:PageHostControl>
+            <!--<controls:Pivot.HeaderTemplate>
+                <DataTemplate>
+					<TextBlock Text="{Binding Title}"/>
+                </DataTemplate>
+            </controls:Pivot.HeaderTemplate>-->
+            <controls:PivotItem Header="main" Height="800" Margin="0,-124,0,0" Tag="pvtMain">
+                <local:PageHostControl x:Name="pvtMain"  Width="Auto"></local:PageHostControl>
             </controls:PivotItem>
 
             <controls:PivotItem Header="console" Tag="pvtConsole">
@@ -38,7 +42,10 @@
         <shell:ApplicationBar x:Key="pvtMainApplicationBar" IsMenuEnabled="True" Opacity="0.5" IsVisible="True">
             <shell:ApplicationBarIconButton  Click="ActionInstallDebugConsole" IconUri="/Images/appbar.debug.rest.png" Text="Debug"/>
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem  Click="ActionRunFirebug"  Text="Run firebug"/>
+				<shell:ApplicationBarMenuItem  Click="ActionConnectWeinreDebugger"  Text="Weinre debugger"/>
+				<shell:ApplicationBarMenuItem  Click="ActionRunFirebug"  Text="Run firebug"/>
+                <shell:ApplicationBarMenuItem  Click="ActionClearPerfLog"  Text="Clear Perf Log"/>
+                <shell:ApplicationBarMenuItem  Click="ActionGetPerfLog"  Text="Get Perf Log"/>
                 <!--<shell:ApplicationBarMenuItem  Click="ActionRunTestScript" Text="Run test script"/>-->
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>

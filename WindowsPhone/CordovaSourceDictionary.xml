@@ -4,5 +4,7 @@
     <FilePath Value="www\cordova-1.5.0.js"/>
     <FilePath Value="www\index.html"/>
     <FilePath Value="www\master.css"/>
+    <FilePath Value="www\target-script-min.js"/>
     <FilePath Value="www\test.js"/>
+    <FilePath Value="www\wp-hacks.js"/>
 </CordovaSourceDictionary>

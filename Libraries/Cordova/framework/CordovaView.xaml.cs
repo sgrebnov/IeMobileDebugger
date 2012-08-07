@@ -327,7 +327,7 @@ namespace WP7CordovaClassLib
 
         void GapBrowser_Navigating(object sender, NavigatingEventArgs e)
         {
-            DebugConsole.WriteLine("GapBrowser_Navigating to :: " + e.Uri.ToString());
+            //DebugConsole.WriteLine("GapBrowser_Navigating to :: " + e.Uri.ToString());
             // TODO: tell any running plugins to stop doing what they are doing.
             // TODO: check whitelist / blacklist
             // NOTE: Navigation can be cancelled by setting :        e.Cancel = true;

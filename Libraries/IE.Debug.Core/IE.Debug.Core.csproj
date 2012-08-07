@@ -60,6 +60,10 @@
       <Project>{FC6A1A70-892D-46AD-9E4A-9793F72AF780}</Project>
       <Name>WP7CordovaClassLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Support\Support.csproj">
+      <Project>{5F99E641-C43E-49A2-A771-06FC091BE010}</Project>
+      <Name>Support</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

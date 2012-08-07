@@ -93,6 +93,7 @@
     <Content Include="www\cordova-1.5.0.js" />
     <Content Include="www\index.html" />
     <Content Include="www\master.css" />
+    <Content Include="www\target-script-min.js" />
     <Content Include="www\test.js" />
     <Content Include="Images\appbar.debug.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -106,6 +107,7 @@
     <Content Include="Images\appbar.plus.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="www\wp-hacks.js" />
     <None Include="BuildManifestProcessor.js" />
     <None Include="Properties\AppManifest.xml">
       <SubType>Designer</SubType>

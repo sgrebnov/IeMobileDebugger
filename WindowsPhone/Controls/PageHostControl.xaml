@@ -15,8 +15,8 @@
             <my:CordovaView HorizontalAlignment="Stretch" 
                     Margin="0,64,0,0"  
                     Name="PGView" 
-                    VerticalAlignment="Stretch" StartPageUri="http://google.com" />
-            <TextBox Height="72" HorizontalAlignment="Left" Name="txtUrl" Text="http://google.com" VerticalAlignment="Top" Width="414" Margin="-10,-3,0,0" />
+                    VerticalAlignment="Stretch" StartPageUri="http://microsoft.com" />
+            <TextBox Height="72" HorizontalAlignment="Left" Name="txtUrl" Text="http://microsoft.com" VerticalAlignment="Top" Width="414" Margin="-10,-3,0,0" />
             <Button Content="go" Height="72" HorizontalAlignment="Left" Margin="384,-1,0,0" Name="btnNavigate" VerticalAlignment="Top" Width="82" Click="btnNavigate_Click" />
         </Grid>
 

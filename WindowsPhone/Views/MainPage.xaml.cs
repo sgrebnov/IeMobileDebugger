@@ -17,6 +17,7 @@ using Support;
 using IE.Debug.Core;
 using IE.Debug.WindowsPhone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Info;
 
 namespace IE.Debug.WindowsPhone.Views
 {
@@ -38,6 +39,22 @@ namespace IE.Debug.WindowsPhone.Views
         {
             WebPageDebugger.InstallFirebug();             
         }
+
+        private void ActionConnectWeinreDebugger(object sender, EventArgs e)
+        {
+            WebPageDebugger.ConnectWeinerDebugger();
+        }
+
+        private void ActionClearPerfLog(object sender, EventArgs e)
+        {
+            WebPageDebugger.ExecuteCustomScript("window.profiler.reset();");
+        }
+
+        private void ActionGetPerfLog(object sender, EventArgs e)
+        {
+            WebPageDebugger.ExecuteCustomScript("console.log($dumpProfileJSON (window.profiler));");
+        }
+
         private void ActionInstallDebugConsole(object sender, EventArgs e)
         {
             WebPageDebugger.InstallDebugConsole();
