@@ -44,8 +44,8 @@
             <shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem  Click="ActionConnectWeinreDebugger"  Text="Weinre debugger"/>
 				<shell:ApplicationBarMenuItem  Click="ActionRunFirebug"  Text="Run firebug"/>
-                <shell:ApplicationBarMenuItem  Click="ActionClearPerfLog"  Text="Clear Perf Log"/>
-                <shell:ApplicationBarMenuItem  Click="ActionGetPerfLog"  Text="Get Perf Log"/>
+                <!--<shell:ApplicationBarMenuItem  Click="ActionClearPerfLog"  Text="Clear Perf Log"/>
+                <shell:ApplicationBarMenuItem  Click="ActionGetPerfLog"  Text="Get Perf Log"/>-->
                 <!--<shell:ApplicationBarMenuItem  Click="ActionRunTestScript" Text="Run test script"/>-->
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>

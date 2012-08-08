@@ -54,7 +54,20 @@ namespace IE.Debug.Core
 
         public static void ConnectWeinerDebugger()
         {
-            ConnectWeiner();
+            try
+            {
+                browser.InvokeScript("eval", new string[] { @"window.WeinreServerId='wp7'" });
+                browser.InvokeScript("eval", new string[] { @"window.WeinreServerURL='http://debug.shadow.adobe.com:8080'" });
+
+                browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent(@"app/www/wp-hacks.js") });
+                browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent(@"app/www/target-script-min.js") });
+
+                MessageBox.Show("Debugger connected to the following endpoint: http://debug.shadow.adobe.com:8080/client/#wp7");
+            }
+            catch (Exception ex) 
+            {
+                Support.Messages.ShowError("Sorry, an error occured. " + ex.Message);
+            }
         }
 
         public static void InstallFirebug()
@@ -66,17 +79,6 @@ namespace IE.Debug.Core
         public static void ExecuteCustomScript(string script)
         {
             browser.InvokeScript("eval", new string[] { script});
-        }
-
-        public static void ConnectWeiner() 
-        {
-
-            browser.InvokeScript("eval", new string[] { @"window.WeinreServerId='wp7'" });
-            browser.InvokeScript("eval", new string[] { @"window.WeinreServerURL='http://debug.shadow.adobe.com:8080'" });
-
-            browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent(@"app/www/wp-hacks.js") });
-            browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent(@"app/www/target-script-min.js") });
-        
         }
     }
 }
