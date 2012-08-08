@@ -5,9 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Debug.WindowsPhone", "Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Support", "Libraries\Support\Support.csproj", "{5F99E641-C43E-49A2-A771-06FC091BE010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP7CordovaClassLib", "Libraries\Cordova\framework\WP7CordovaClassLib.csproj", "{FC6A1A70-892D-46AD-9E4A-9793F72AF780}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IE.Debug.Core", "Libraries\IE.Debug.Core\IE.Debug.Core.csproj", "{435B81A7-D555-4D9E-BE2D-0DCEE4D6050E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WP7CordovaClassLib", "Libraries\cordovalib\WP7CordovaClassLib.csproj", "{FC6A1A70-892D-46AD-9E4A-9793F72AF780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{5F99E641-C43E-49A2-A771-06FC091BE010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F99E641-C43E-49A2-A771-06FC091BE010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F99E641-C43E-49A2-A771-06FC091BE010}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Release|Any CPU.Build.0 = Release|Any CPU
 		{435B81A7-D555-4D9E-BE2D-0DCEE4D6050E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{435B81A7-D555-4D9E-BE2D-0DCEE4D6050E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{435B81A7-D555-4D9E-BE2D-0DCEE4D6050E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{435B81A7-D555-4D9E-BE2D-0DCEE4D6050E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6A1A70-892D-46AD-9E4A-9793F72AF780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

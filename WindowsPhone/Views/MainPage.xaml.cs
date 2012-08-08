@@ -59,10 +59,6 @@ namespace IE.Debug.WindowsPhone.Views
         {
             WebPageDebugger.InstallDebugConsole();
         }
-        private void ActionRunTestScript(object sender, EventArgs e)
-        {
-            WebPageDebugger.InjectTestScript();
-        }
 
         private void ActionZoomIn(object sender, EventArgs e)
         {

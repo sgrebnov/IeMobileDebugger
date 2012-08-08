@@ -36,8 +36,20 @@ namespace IE.Debug.Core
 
         public static void InstallDebugConsole()
         {
-            browser.InvokeScript("eval", new string[] { Scripting.PhoneGapInjectScript });
-            browser.InvokeScript("eval", new string[] { Scripting.BuilInjectScript(@"http://mshare.akvelon.net:8184/cordova-init.js")});
+            try
+            {
+                string nativeReady = "(function(){ cordova.require('cordova/channel').onNativeReady.fire()})();";
+
+                browser.InvokeScript("eval", new string[] { Scripting.PhoneGapInjectScript });
+                browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent("app/www/js/wpHtmlDebugger.js") });
+
+                browser.InvokeScript("execScript", new string[] { nativeReady });
+            }
+            catch (Exception ex)
+            {
+                Support.Messages.ShowError("Sorry, an error occured. " + ex.Message);
+            }
+            //browser.InvokeScript("eval", new string[] { Scripting.BuilInjectScript(@"http://mshare.akvelon.net:8184/cordova-init.js")});
         }
 
         public static void ConnectWeinerDebugger()
@@ -62,16 +74,9 @@ namespace IE.Debug.Core
             browser.InvokeScript("eval", new string[] { @"window.WeinreServerId='wp7'" });
             browser.InvokeScript("eval", new string[] { @"window.WeinreServerURL='http://debug.shadow.adobe.com:8080'" });
 
-            browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent("app/www/wp-hacks.js") });
+            browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent(@"app/www/wp-hacks.js") });
             browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent(@"app/www/target-script-min.js") });
         
         }
-
-        public static void InjectTestScript()
-        {
-            browser.InvokeScript("eval", new string[] { Scripting.BuilInjectScript(Scripting.TestLink) });
-        }
-
-
     }
 }

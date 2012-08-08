@@ -8,13 +8,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Support;
 
 namespace IE.Debug.Core
 {
     public static class Scripting
     {
-        public static readonly string PhoneGapLink = @"http://mshare.akvelon.net:8184/cordova-1.5.0.js";
-        public static readonly string TestLink = @"http://mshare.akvelon.net:8184/test.js";
         public static readonly string FirebugLink = @"https://getfirebug.com/firebug-lite.js#startOpened";
 
         public static string BuilInjectScript(string link)
@@ -24,16 +23,16 @@ namespace IE.Debug.Core
                 link);
         }
 
-		public static string BuilInjectInlineScript(string text)
-		{
-			return String.Format(
-				@"var head = document.getElementsByTagName('head')[0]; var sc1 = document.createElement('script');sc1.innerHTML = '{0}';sc1.type = 'text/javascript'; (head || document.body).appendChild(sc1);",
-				text);
-		}
+        public static string BuilInjectInlineScript(string text)
+        {
+            return String.Format(
+                @"var head = document.getElementsByTagName('head')[0]; var sc1 = document.createElement('script');sc1.innerHTML = '{0}';sc1.type = 'text/javascript'; (head || document.body).appendChild(sc1);",
+                text);
+        }
 
         public static string PhoneGapInjectScript 
         {
-            get {return BuilInjectScript(PhoneGapLink); }
+            get { return FileUtils.ReadFileContent(@"app/www/cordova-2.0.0.js"); }
         }
 
         public static string FirebugInjectScript

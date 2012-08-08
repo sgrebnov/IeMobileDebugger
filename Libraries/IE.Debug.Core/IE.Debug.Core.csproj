@@ -56,7 +56,7 @@
     <Compile Include="WebPageDebugger.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cordova\framework\WP7CordovaClassLib.csproj">
+    <ProjectReference Include="..\cordovalib\WP7CordovaClassLib.csproj">
       <Project>{FC6A1A70-892D-46AD-9E4A-9793F72AF780}</Project>
       <Name>WP7CordovaClassLib</Name>
     </ProjectReference>

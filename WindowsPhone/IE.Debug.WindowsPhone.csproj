@@ -90,8 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CordovaSourceDictionary.xml" />
-    <Content Include="www\cordova-1.5.0.js" />
+    <Content Include="www\cordova-2.0.0.js" />
     <Content Include="www\index.html" />
+    <Content Include="www\js\wpHtmlDebugger.js" />
     <Content Include="www\master.css" />
     <Content Include="www\target-script-min.js" />
     <Content Include="www\test.js" />
@@ -154,7 +155,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Libraries\Cordova\framework\WP7CordovaClassLib.csproj">
+    <ProjectReference Include="..\Libraries\cordovalib\WP7CordovaClassLib.csproj">
       <Project>{FC6A1A70-892D-46AD-9E4A-9793F72AF780}</Project>
       <Name>WP7CordovaClassLib</Name>
     </ProjectReference>
