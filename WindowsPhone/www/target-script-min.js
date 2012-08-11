@@ -1253,16 +1253,13 @@ var xhr;
 if (null === handler) {
 throw new Ex(arguments, "handler must not be null");
 }
-
 xhr = new XMLHttpRequestPatched();
 xhr.httpSocket = this;
 xhr.httpSocketHandler = handler;
 xhr.onreadystatechange = _xhrEventHandler;
-
 HookLib.ignoreHooks(function() {
 return xhr.open(method, url, true);
 });
-
 xhr.setRequestHeader("Content-Type", "text/plain");
 return HookLib.ignoreHooks(function() {
 return xhr.send(data);
@@ -1541,7 +1538,7 @@ require("../common/MethodNamer").setNamesForClass(module.exports);
 ;
 // weinre/target/CSSStore.amd.js
 ;modjewel.define("weinre/target/CSSStore", function(require, exports, module) { 
-var CSSStore, IDGenerator, Weinre, _elementMatchesSelector, _fallbackMatchesSelector, _getMappableId, _getMappableObject, _mozMatchesSelector, _webkitMatchesSelector, _msMatchesSelector;
+var CSSStore, IDGenerator, Weinre, _elementMatchesSelector, _fallbackMatchesSelector, _getMappableId, _getMappableObject, _mozMatchesSelector, _msMatchesSelector, _webkitMatchesSelector;
 IDGenerator = require('../common/IDGenerator');
 Weinre = require('../common/Weinre');
 _elementMatchesSelector = null;
@@ -1872,7 +1869,7 @@ if (!element.msMatchesSelector) {
 return false;
 }
 return element.msMatchesSelector(selector);
-}
+};
 _fallbackMatchesSelector = function(element, selector) {
 return false;
 };
@@ -1881,7 +1878,7 @@ _elementMatchesSelector = _webkitMatchesSelector;
 } else if (Element.prototype.mozMatchesSelector) {
 _elementMatchesSelector = _mozMatchesSelector;
 } else if (Element.prototype.msMatchesSelector) {
-    _elementMatchesSelector = _msMatchesSelector;
+_elementMatchesSelector = _msMatchesSelector;
 } else {
 _elementMatchesSelector = _fallbackMatchesSelector;
 }
@@ -2423,9 +2420,7 @@ if (obj instanceof inspectedWindow.Node) {
 try {
 return (obj.nodeType === undefined ? type : "node");
 } catch (ex) {} 
-if (obj.toString)
 return obj.toString();
-return "node";
 }
 if (obj instanceof inspectedWindow.String)
 return "string";
