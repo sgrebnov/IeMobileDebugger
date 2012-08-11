@@ -56,6 +56,9 @@ namespace IE.Debug.Core
         {
             try
             {
+                // install cross domain request wrapper
+                browser.InvokeScript("eval", new string[] { @"window.wpHtmlDebugger.applyXSSpatch()" });
+                
                 browser.InvokeScript("eval", new string[] { @"window.WeinreServerId='wp7'" });
                 browser.InvokeScript("eval", new string[] { @"window.WeinreServerURL='http://debug.shadow.adobe.com:8080'" });
 

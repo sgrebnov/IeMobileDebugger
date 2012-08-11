@@ -1253,44 +1253,17 @@ var xhr;
 if (null === handler) {
 throw new Ex(arguments, "handler must not be null");
 }
-// TODO
-//xhr = new XMLHttpRequest();
-xhr = new XDomainRequest();
+
+xhr = new XMLHttpRequestPatched();
 xhr.httpSocket = this;
 xhr.httpSocketHandler = handler;
 xhr.onreadystatechange = _xhrEventHandler;
-xhr.onload = function(){
-    xhr.status = 200;
-    xhr.statusText = "OK";
-    xhr.readyState = 4;
-    xhr.onreadystatechange({target: xhr});
-};
-
-xhr.onerror = function () {
-    if (xhr.onreadystatechange != null) {
-        xhr.readyState = 4;
-        xhr.status = 0;
-        xhr.statusText = ''; // ???
-        xhr.responseText = '';
-
-        xhr.onreadystatechange({target: xhr});
-    }
-};
-xhr.onprogress = function () {
-    if (xhr.onreadystatechange != null && xhr.status != 3) {
-        xhr.readyState = 3;
-        xhr.status = 3;
-        xhr.statusText = '';
-        xhr.onreadystatechange({target: xhr});
-    }
-};
 
 HookLib.ignoreHooks(function() {
 return xhr.open(method, url, true);
 });
 
-//TODO
-//xhr.setRequestHeader("Content-Type", "text/plain");
+xhr.setRequestHeader("Content-Type", "text/plain");
 return HookLib.ignoreHooks(function() {
 return xhr.send(data);
 });
