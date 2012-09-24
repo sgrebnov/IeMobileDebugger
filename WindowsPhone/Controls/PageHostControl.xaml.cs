@@ -25,20 +25,26 @@ namespace IE.Debug.WindowsPhone.Controls
         {
             InitializeComponent();
 
-            PGView.StartPageUri = new Uri(txtUrl.Text, UriKind.RelativeOrAbsolute);
-
             this.Loaded += (arg1, arg2) => {
 
                 txtUrl.InputScope = new InputScope { Names = { new InputScopeName { NameValue = InputScopeNameValue.Url } } };
 
                 WebPageDebugger.Initialize(this.Browser);
 
-                PGView.Browser.NavigationFailed += (s, ex) =>
+                Browser.NavigationFailed += (s, ex) =>
                 {
                     if (ex.Exception != null) {
                         Messages.ShowError(ex.Exception.Message);
                     }
                 };
+
+                Browser.LoadCompleted += (s, ex) =>
+                {
+                    WebPageDebugger.InstallDebugConsole();
+                    Weinre.WeinreDebugger.RegisterTarget();
+                };
+
+                Browser.Navigate(new Uri(txtUrl.Text, UriKind.RelativeOrAbsolute));
             };
         }
 

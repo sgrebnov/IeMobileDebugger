@@ -6,7 +6,7 @@
         document.addEventListener('deviceready', this.deviceready, false);
     },
     deviceready: function () {
-        alert("Debug console installed and working");
+        console.log("Debug console installed and working");
     },
 	applyXSSpatch: function() {
 		var xhr = function() {

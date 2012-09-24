@@ -23,7 +23,7 @@ namespace IE.Debug.WindowsPhone.Controls
 
         private void LoadCurrentHtmlSource()
         {
-            tbSource.Text = WebPageDebugger.pageHtml;
+            tbSource.Text = WebPageDebugger.PageHtml;
         }
 
         public void ZoomIn()

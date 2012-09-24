@@ -15,14 +15,9 @@
     shell:SystemTray.IsVisible="True"
     xmlns:local="clr-namespace:IE.Debug.WindowsPhone.Controls">
     
-    <Grid x:Name="LayoutRoot" Margin="0,0,0,0" Height="Auto" Background="Transparent" VerticalAlignment="Top">
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,0" Background="Transparent">
         <!--Pivot Control-->
-        <controls:Pivot Title="Windows Phone IE debugger" Name="pivotControl" SelectionChanged="Pivot_SelectionChanged">
-            <!--<controls:Pivot.HeaderTemplate>
-                <DataTemplate>
-					<TextBlock Text="{Binding Title}"/>
-                </DataTemplate>
-            </controls:Pivot.HeaderTemplate>-->
+        <!--<controls:Pivot Title="Windows Phone IE debugger" Name="pivotControl" SelectionChanged="Pivot_SelectionChanged">
             <controls:PivotItem Header="main" Height="800" Margin="0,-124,0,0" Tag="pvtMain">
                 <local:PageHostControl x:Name="pvtMain"  Width="Auto"></local:PageHostControl>
             </controls:PivotItem>
@@ -34,7 +29,13 @@
             <controls:PivotItem Header="source" Tag="pvtSource">
                 <local:ViewSourceControl x:Name="pvtSource"></local:ViewSourceControl>
             </controls:PivotItem>
-        </controls:Pivot>
+        </controls:Pivot>-->
+        
+        <local:PageHostControl x:Name="pvtMain"/>
+        
+        
+
+
     </Grid>      
 
     <phone:PhoneApplicationPage.Resources>

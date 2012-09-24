@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+﻿using IE.Debug.Core;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
-using IE.Debug.Core;
+using System;
 
 namespace IE.Debug.WindowsPhone
 {
@@ -28,8 +18,8 @@ namespace IE.Debug.WindowsPhone
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
 
-            this.html = WebPageDebugger.pageHtml;
-            this.uri = WebPageDebugger.pageUri;
+            this.html = WebPageDebugger.PageHtml;
+            this.uri = WebPageDebugger.PageUri;
 
             this.txtSource.Text = this.html;
 

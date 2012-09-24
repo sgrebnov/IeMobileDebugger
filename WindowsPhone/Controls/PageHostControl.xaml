@@ -9,15 +9,23 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480"
     xmlns:my="clr-namespace:WP7CordovaClassLib;assembly=WP7CordovaClassLib">
-    
-    <Grid x:Name="LayoutRoot">
+
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,0">
         <Grid>
-            <my:CordovaView HorizontalAlignment="Stretch" 
-                    Margin="0,64,0,0"  
+            <Grid.RowDefinitions>
+                <RowDefinition Height="72"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <my:CordovaView Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" 
                     Name="PGView" 
                     VerticalAlignment="Stretch" StartPageUri="http://microsoft.com" />
-            <TextBox Height="72" HorizontalAlignment="Left" Name="txtUrl" Text="http://microsoft.com" VerticalAlignment="Top" Width="414" Margin="-10,-3,0,0" />
-            <Button Content="go" Height="72" HorizontalAlignment="Left" Margin="384,-1,0,0" Name="btnNavigate" VerticalAlignment="Top" Width="82" Click="btnNavigate_Click" />
+            <TextBox Grid.Row="0" Grid.Column="0" Name="txtUrl" Text="http://m.microsoft.com" Margin="-10,0" Padding="0,2,2,2" />
+            <Button Grid.Row="0" Grid.Column="1" Content="debug" Name="btnNavigate" Click="btnNavigate_Click" Padding="0,3,0,5" Margin="0,0,-10,0" />
         </Grid>
 
     </Grid>

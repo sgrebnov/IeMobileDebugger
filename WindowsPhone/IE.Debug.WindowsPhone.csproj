@@ -163,6 +163,10 @@
       <Project>{435B81A7-D555-4D9E-BE2D-0DCEE4D6050E}</Project>
       <Name>IE.Debug.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Libraries\IE.Debug.Weinre\IE.Debug.Weinre.csproj">
+      <Project>{18AFA051-F01B-458E-B64A-4E3B495881D4}</Project>
+      <Name>IE.Debug.Weinre</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Libraries\Support\Support.csproj">
       <Project>{5F99E641-C43E-49A2-A771-06FC091BE010}</Project>
       <Name>Support</Name>
