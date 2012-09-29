@@ -23,22 +23,33 @@ namespace IE.Debug.Core
             WebPageDebugger.Browser = browser;
         }
 
-        public static void InstallDebugConsole()
+        public static bool InstallDebugConsole()
         {
             try
             {
-                string nativeReady = "(function(){ cordova.require('cordova/channel').onNativeReady.fire()})();";
+                Browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent("app/www/js/console.js") });
+
+                if (String.Compare("true", (string)Browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent("app/www/js/compatModeDetection.js") })) == 0)
+                {
+                    Messages.ShowError("Oops. It seems the page runs in compatibility mode. Please fix and try again.");
+                    return false;
+                }
+
 
                 Browser.InvokeScript("eval", new string[] { Scripting.PhoneGapInjectScript });
                 Browser.InvokeScript("eval", new string[] { FileUtils.ReadFileContent("app/www/js/wpHtmlDebugger.js") });
 
+                string nativeReady = "(function(){ cordova.require('cordova/channel').onNativeReady.fire()})();";
                 Browser.InvokeScript("execScript", new string[] { nativeReady });
+
+                return true;
             }
             catch (Exception ex)
             {
                 Support.Messages.ShowError("Sorry, an error occured. " + ex.Message);
             }
-            //browser.InvokeScript("eval", new string[] { Scripting.BuilInjectScript(@"http://mshare.akvelon.net:8184/cordova-init.js")});
+
+            return false;
         }
 
         public static void InstallFirebug()

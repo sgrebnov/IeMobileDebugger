@@ -7,5 +7,7 @@
     <FilePath Value="www\target-script-min.js"/>
     <FilePath Value="www\test.js"/>
     <FilePath Value="www\wp-hacks.js"/>
+    <FilePath Value="www\js\compatModeDetection.js"/>
+    <FilePath Value="www\js\console.js"/>
     <FilePath Value="www\js\wpHtmlDebugger.js"/>
 </CordovaSourceDictionary>

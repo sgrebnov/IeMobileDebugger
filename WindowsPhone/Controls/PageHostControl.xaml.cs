@@ -33,15 +33,18 @@ namespace IE.Debug.WindowsPhone.Controls
 
                 Browser.NavigationFailed += (s, ex) =>
                 {
-                    if (ex.Exception != null) {
+                    if (ex.Exception != null)
+                    {
                         Messages.ShowError(ex.Exception.Message);
                     }
                 };
 
                 Browser.LoadCompleted += (s, ex) =>
                 {
-                    WebPageDebugger.InstallDebugConsole();
-                    Weinre.WeinreDebugger.RegisterTarget();
+                    if (WebPageDebugger.InstallDebugConsole())
+                    {
+                        Weinre.WeinreDebugger.RegisterTarget();
+                    }
                 };
 
                 Browser.Navigate(new Uri(txtUrl.Text, UriKind.RelativeOrAbsolute));
