@@ -43,7 +43,18 @@
                 };
 
                 Browser.Navigate(new Uri(txtUrl.Text, UriKind.RelativeOrAbsolute));
+
+                VisualStateManager.GoToState(this, this.EnableFullscreen ? "Fullscreen" : "Standard", true);
             };
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether full screen mode is enabled or not
+        /// </summary>
+        public bool EnableFullscreen
+        {
+            get;
+            set;
         }
 
         /// <summary>
