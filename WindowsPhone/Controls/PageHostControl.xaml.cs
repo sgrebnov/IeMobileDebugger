@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Support;
-using Microsoft.Phone.Controls;
-using IE.Debug.Core;
-
-namespace IE.Debug.WindowsPhone.Controls
+﻿namespace IE.Debug.WindowsPhone.Controls
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using IE.Debug.Core;
+    using Microsoft.Phone.Controls;
+    using Support;    
+    
+    /// <summary>
+    /// Represents PageHost control.
+    /// </summary>
     public partial class PageHostControl : UserControl, IPivotItemSelectable
-    {
-        public WebBrowser Browser { 
-            get { return PGView.Browser; } 
-        }
-        
+    {               
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageHostControl"/> class.
+        /// </summary>
         public PageHostControl()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
-            this.Loaded += (arg1, arg2) => {
-
+            this.Loaded += (arg1, arg2) => 
+            {
                 txtUrl.InputScope = new InputScope { Names = { new InputScopeName { NameValue = InputScopeNameValue.Url } } };
 
                 WebPageDebugger.Initialize(this.Browser);
@@ -51,7 +46,56 @@ namespace IE.Debug.WindowsPhone.Controls
             };
         }
 
-        private void btnNavigate_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Gets WebBrowser control.
+        /// </summary>
+        public WebBrowser Browser
+        {
+            get { return PGView.Browser; }
+        }
+
+        /// <summary>
+        /// Occurs when pivot item is selected.
+        /// </summary>
+        public void OnSelected()
+        {
+        }
+
+        /// <summary>
+        /// Occurs when pivot item is deselected.
+        /// </summary>
+        public void OnDeselected()
+        {
+        }
+
+        /// <summary>
+        /// Handles Debug button click.
+        /// </summary>
+        /// <param name="sender">Debug button.</param>
+        /// <param name="e">event args.</param>
+        private void BtnNavigateClick(object sender, RoutedEventArgs e)
+        {
+            this.Navigate();
+        }        
+
+        /// <summary>
+        /// Handles KeyDown event.
+        /// </summary>
+        /// <param name="sender">input control.</param>
+        /// <param name="e">event args.</param>
+        private void TxtUrlKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                this.Focus();
+                this.Navigate();
+            }
+        }
+
+        /// <summary>
+        /// Navigates to the chosen URL.
+        /// </summary>
+        private void Navigate()
         {
             try
             {
@@ -62,18 +106,7 @@ namespace IE.Debug.WindowsPhone.Controls
             catch (Exception ex)
             {
                 Messages.ShowError(ex.Message);
-
             }
-        }
-
-        public void OnSelected()
-        {
-            
-        }
-
-        public void OnDeselected()
-        {
-            
         }
     }
 }

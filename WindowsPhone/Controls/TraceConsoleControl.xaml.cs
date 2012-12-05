@@ -1,43 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using IE.Debug.Core;
-
-namespace IE.Debug.WindowsPhone.Controls
+﻿namespace IE.Debug.WindowsPhone.Controls
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+    using IE.Debug.Core;
+
+    /// <summary>
+    /// Represents TraceConsole control.
+    /// </summary>
     public partial class TraceConsoleControl : UserControl, IPivotItemSelectable
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TraceConsoleControl"/> class.
+        /// </summary>
         public TraceConsoleControl()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.Loaded += (arg1, arg2) =>
             {
                 DebugTraceListener.OnNewTraceLine += (message, nothing) =>
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        tbConsoleOutput.Text += String.Format("{0}{1}", message, Environment.NewLine);
+                        tbConsoleOutput.Text += string.Format("{0}{1}", message, Environment.NewLine);
                     });
                 };
             };
         }
 
+        /// <summary>
+        /// Handles pivot item selected event.
+        /// </summary>
         public void OnSelected()
         {
-
         }
 
+        /// <summary>
+        /// Handles pivot item deselected event.
+        /// </summary>
         public void OnDeselected()
         {
-
         }
     }
 }

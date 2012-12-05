@@ -24,8 +24,8 @@
             <my:CordovaView Grid.Row="1" Margin="0,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" 
                     Name="PGView" 
                     VerticalAlignment="Stretch" StartPageUri="http://microsoft.com" />
-            <TextBox Grid.Row="0" Grid.Column="0" Name="txtUrl" Text="http://m.microsoft.com" Margin="-10,0" Padding="0,2,2,2" />
-            <Button Grid.Row="0" Grid.Column="1" Content="debug" Name="btnNavigate" Click="btnNavigate_Click" Padding="0,3,0,5" Margin="0,0,-10,0" />
+            <TextBox Grid.Row="0" Grid.Column="0" Name="txtUrl" Text="http://m.microsoft.com" Margin="-10,0" Padding="0,2,2,2" KeyDown="TxtUrlKeyDown" />
+            <Button Grid.Row="0" Grid.Column="1" Content="debug" Name="btnNavigate" Click="BtnNavigateClick" Padding="0,3,0,5" Margin="0,0,-10,0" />
         </Grid>
 
     </Grid>

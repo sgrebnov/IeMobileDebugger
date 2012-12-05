@@ -1,20 +1,24 @@
-﻿using IE.Debug.Core;
-using IE.Debug.Weinre;
-using Microsoft.Phone.Controls;
-using System;
-using System.Windows.Controls;
-
-namespace IE.Debug.WindowsPhone.Views
+﻿namespace IE.Debug.WindowsPhone.Views
 {
+    using System;
+    using System.Windows.Controls;
+    using IE.Debug.Core;
+    using IE.Debug.Weinre;
+    using Microsoft.Phone.Controls;
+    
+    /// <summary>
+    /// Represents the main page of the app
+    /// </summary>
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainPage"/> class.
+        /// </summary>
         public MainPage()
         {
-            InitializeComponent();            
+            this.InitializeComponent();            
         }
         
-
         private void AppbarButtonRefresh_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/ViewSource.xaml", UriKind.Relative));
@@ -50,6 +54,11 @@ namespace IE.Debug.WindowsPhone.Views
             //pvtSource.Email();
         }
 
+        /// <summary>
+        /// Handles Pivot SelectionChanged event.
+        /// </summary>
+        /// <param name="sender">Pivot control</param>
+        /// <param name="e">event args</param>
         private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //if (pivotControl.SelectedItem == null) return;

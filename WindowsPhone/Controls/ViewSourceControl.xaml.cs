@@ -1,56 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using IE.Debug.Core;
-using Support;
-
-namespace IE.Debug.WindowsPhone.Controls
+﻿namespace IE.Debug.WindowsPhone.Controls
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+    using IE.Debug.Core;
+
+    /// <summary>
+    /// Represents ViewSource control.
+    /// </summary>
     public partial class ViewSourceControl : UserControl, IPivotItemSelectable
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewSourceControl"/> class.
+        /// </summary>
         public ViewSourceControl()
         {
-            InitializeComponent();
-        }
+            this.InitializeComponent();
+        }        
 
-        private void LoadCurrentHtmlSource()
-        {
-            tbSource.Text = WebPageDebugger.PageHtml;
-        }
-
+        /// <summary>
+        /// Zooms in
+        /// </summary>
         public void ZoomIn()
         {
             tbSource.FontSize = Math.Min(tbSource.FontSize + 2, 54);
         }
 
+        /// <summary>
+        /// Zooms out
+        /// </summary>
         public void ZoomOut()
         {
             tbSource.FontSize = Math.Max(tbSource.FontSize - 2, 0);
         }
 
+        /// <summary>
+        /// Sends email
+        /// </summary>
         public void Email()
         {
             MessageBox.Show("Not implemented yet");
         }
 
+        /// <summary>
+        /// Handles pivot item selected event.
+        /// </summary>
         public void OnSelected()
         {
-            LoadCurrentHtmlSource();
+            this.LoadCurrentHtmlSource();
         }
 
+        /// <summary>
+        /// Handles pivot item deselected event.
+        /// </summary>
         public void OnDeselected()
         {
+        }
 
+        /// <summary>
+        /// Loads current html page
+        /// </summary>
+        private void LoadCurrentHtmlSource()
+        {
+            tbSource.Text = WebPageDebugger.PageHtml;
         }
     }
-
-
 }
