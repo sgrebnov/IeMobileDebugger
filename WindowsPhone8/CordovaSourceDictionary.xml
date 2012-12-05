@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file is auto-generated, do not edit! -jm -->
+<CordovaSourceDictionary>
+    <FilePath Value="Images\appbar.debug.rest.png"/>
+    <FilePath Value="Images\appbar.feature.email.rest.png"/>
+    <FilePath Value="Images\appbar.minus.rest.png"/>
+    <FilePath Value="Images\appbar.plus.rest.png"/>
+    <FilePath Value="www\cordova-2.0.0.js"/>
+    <FilePath Value="www\index.html"/>
+    <FilePath Value="www\js\compatModeDetection.js"/>
+    <FilePath Value="www\js\console.js"/>
+    <FilePath Value="www\js\wpHtmlDebugger.js"/>
+    <FilePath Value="www\master.css"/>
+    <FilePath Value="www\target-script-min.js"/>
+    <FilePath Value="www\test.js"/>
+    <FilePath Value="www\wp-hacks.js"/>
+</CordovaSourceDictionary>

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D38EAD9-9125-49D8-9DCD-B158D14B8200}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IE.Debug.WindowsPhone</RootNamespace>
+    <AssemblyName>IE.Debug.WindowsPhone</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>IE.Debug.WindowsPhone_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>IeMobileDebugger.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IE.Debug.Core">
+      <HintPath>..\Libraries\IE.Debug.Core\Bin\Debug\IE.Debug.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IE.Debug.Weinre">
+      <HintPath>..\Libraries\IE.Debug.Weinre\Bin\Debug\IE.Debug.Weinre.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="Support">
+      <HintPath>..\Libraries\Support\Bin\Debug\Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WP7CordovaClassLib">
+      <HintPath>..\Libraries\cordovalib\Bin\Debug\WP7CordovaClassLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WindowsPhone\App.xaml.cs">
+      <Link>App.xaml.cs</Link>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WindowsPhone\Controls\IPivotItemSelectable.cs">
+      <Link>Controls\IPivotItemSelectable.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhone\Controls\PageHostControl.xaml.cs">
+      <Link>Controls\PageHostControl.xaml.cs</Link>
+      <DependentUpon>PageHostControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WindowsPhone\Controls\TraceConsoleControl.xaml.cs">
+      <Link>Controls\TraceConsoleControl.xaml.cs</Link>
+      <DependentUpon>TraceConsoleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WindowsPhone\Controls\ViewSourceControl.xaml.cs">
+      <Link>Controls\ViewSourceControl.xaml.cs</Link>
+      <DependentUpon>ViewSourceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WindowsPhone\Utils\BlocksPan.cs">
+      <Link>Utils\BlocksPan.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsPhone\Views\MainPage.xaml.cs">
+      <Link>Views\MainPage.xaml.cs</Link>
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\WindowsPhone\Views\ViewSource.xaml.cs">
+      <Link>Views\ViewSource.xaml.cs</Link>
+      <DependentUpon>ViewSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\WindowsPhone\Images\appbar.debug.rest.png">
+      <Link>Images\appbar.debug.rest.png</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\Images\appbar.feature.email.rest.png">
+      <Link>Images\appbar.feature.email.rest.png</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\Images\appbar.minus.rest.png">
+      <Link>Images\appbar.minus.rest.png</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\Images\appbar.plus.rest.png">
+      <Link>Images\appbar.plus.rest.png</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\cordova-2.0.0.js">
+      <Link>www\cordova-2.0.0.js</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\index.html">
+      <Link>www\index.html</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\js\compatModeDetection.js">
+      <Link>www\js\compatModeDetection.js</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\js\console.js">
+      <Link>www\js\console.js</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\js\wpHtmlDebugger.js">
+      <Link>www\js\wpHtmlDebugger.js</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\master.css">
+      <Link>www\master.css</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\target-script-min.js">
+      <Link>www\target-script-min.js</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\test.js">
+      <Link>www\test.js</Link>
+    </Content>
+    <Content Include="..\WindowsPhone\www\wp-hacks.js">
+      <Link>www\wp-hacks.js</Link>
+    </Content>
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BuildManifestProcessor.js" />
+    <Content Include="CordovaSourceDictionary.xml" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\WindowsPhone\App.xaml">
+      <Link>App.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WindowsPhone\Controls\PageHostControl.xaml">
+      <Link>Controls\PageHostControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WindowsPhone\Controls\TraceConsoleControl.xaml">
+      <Link>Controls\TraceConsoleControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WindowsPhone\Controls\ViewSourceControl.xaml">
+      <Link>Controls\ViewSourceControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WindowsPhone\Views\MainPage.xaml">
+      <Link>Views\MainPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\WindowsPhone\Views\ViewSource.xaml">
+      <Link>Views\ViewSource.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <PropertyGroup>
+    <PreBuildEvent>CScript "$(ProjectDir)/BuildManifestProcessor.js" "$(ProjectPath)"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
