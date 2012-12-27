@@ -14,7 +14,7 @@
         /// <summary>
         /// Weinre server.
         /// </summary>
-        private static readonly string WeinreServerURL = @"http://debug.shadow.adobe.com:8080";
+        private static readonly string WeinreServerURL = @"http://debug.phonegap.com";
 
         /// <summary>
         /// Gets unique identifier for this device.
