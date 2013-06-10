@@ -14,7 +14,7 @@
         /// <summary>
         /// Weinre server.
         /// </summary>
-        private static readonly string WeinreServerURL = @"http://debug.phonegap.com";
+        private static readonly string WeinreServerURL = @"http://debug.edgeinspect.adobe.com";
 
         /// <summary>
         /// Gets unique identifier for this device.
@@ -53,7 +53,7 @@
                 WebPageDebugger.ExecuteCustomScript(FileUtils.ReadFileContent(@"app/www/wp-hacks.js")); 
                 WebPageDebugger.ExecuteCustomScript(FileUtils.ReadFileContent(@"app/www/target-script-min.js"));
 
-                MessageBox.Show(string.Format("Successfully connected! Use the following uri in desktop browser: {0}/client/#{1}", WeinreServerURL, WeinreId));
+                MessageBox.Show(string.Format("Success! Open the following uri in desktop browser: {0}/client/#{1}", WeinreServerURL, WeinreId));
             }
             catch (Exception ex)
             {
